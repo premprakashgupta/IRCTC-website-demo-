@@ -1,0 +1,600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*    font-family: 'poppins','sans-serif';*/
+    
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+.menu_bar,.close{
+    display: none;
+}
+:root {
+    --blue: #222fce;
+    --orange: #d4781c;
+    --sky: skyblue;
+}
+.form-control{
+padding-left: .75rem !important;
+}
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    z-index: 9999;
+}
+
+.center-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.center-container img {
+
+    display: block;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/*
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.center-container span:nth-child(1){
+   border-top: 5px solid var(--orange);
+     width: 120px;
+    height: 120px;
+}
+.center-container span:nth-child(2){
+   border-top: 5px solid var(--blue);
+     width: 90px;
+    height: 90px;
+}
+.center-container span:nth-child(3){
+   border-top: 5px solid var(--sky);
+     width: 50px;
+    height: 50px;
+}*/
+
+.modal-body {
+    overflow-y: scroll !important;
+    height: 550px !important;
+
+
+}
+
+.modal-body small {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.modal-body ul li {
+    margin: 10px;
+    list-style: disc;
+
+}
+
+.modal-header {
+    background-color: var(--blue);
+    height: 50px !important;
+    width: 100%;
+    color: #000;
+    font-weight: bold !important;
+    line-height: 50px !important;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-footer button {
+    background: var(--orange) !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    width: 5px;
+    background: transparent;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #938989;
+    width: 0;
+    height: 35%;
+    transition: 0.5s ease;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/*main container styling////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+.backgroundimage_for_interface {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../image/Vande-Bharat-Express-1.jpg");
+
+    background-position: center;
+    background-size: cover;
+}
+
+#passanger_catogery {
+    width: 260px;
+}
+
+.btn {
+    background-color: var(--orange) !important;
+}
+
+header {
+    width: 100%;
+    height: 6rem;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 999;
+}
+
+header navbar {
+    width: 80vw;
+    height: 5rem;
+    /*    background-color: #f8f9fa;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+header navbar nav{
+     width: 80vw;
+    height: 5rem;
+   padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+header navbar nav .unlist1,
+header navbar nav .unlist2 {
+    width: 100%;
+    height: auto;
+    /*    background-color: #f8f9fa;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header navbar nav .unlist1 li,
+header navbar nav .unlist2 li {
+    width: auto;
+    height: 2rem;
+    line-height: 1rem;
+    margin: 2px;
+    padding: 5px;
+    /*        text-transform: uppercase;*/
+    list-style: none;
+    cursor: pointer;
+}
+
+header navbar nav .unlist2 li {
+    position: relative;
+}
+
+.logo1 img,
+.logo2 img {
+    width: 50px;
+    margin: 2px;
+}
+
+.headingcol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.headingcol h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*--------------------------------------specify design in navbar----------------------*/
+
+
+.login_li,
+.irctc_exclusive,
+.premium_partner_li {
+    background-color: blue;
+
+}
+.login_li a,
+.irctc_exclusive a,
+.premium_partner_li a{
+       color: #fff!important;
+    font-weight: bold;
+}
+
+.trains a {
+    color: var(--orange) !important;
+    text-decoration: underline!important;
+}
+.alert_li{
+    background-color: #dde0e3;
+}
+
+
+
+
+@media(max-width: 770px) {
+    header navbar nav {
+        display: none;
+       
+    }
+    header {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    z-index: 999;
+        position: absolute;
+        top: 0;
+        left: 0;
+}
+    header navbar {
+    width: 80vw;
+   height: auto;
+        background-color: #f8f9fa;
+    padding: 10px;
+         transition: 1s ease-in-out;
+}
+    header navbar nav{
+     width: 100%;
+    height: auto;
+   
+    
+}
+    header navbar nav .unlist1,
+header navbar nav .unlist2 {
+    width: 100%;
+    height: auto;
+    /*    background-color: #f8f9fa;*/
+    display: flex;
+     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+    .menu_bar{
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+    }
+}
+
+
+/*sublist making--------------------------------------------------------------*/
+
+
+.subunlist1 {
+    width: 270px;
+    height: auto;
+    position: absolute;
+    background-color: #e6d7d7;
+    display: none;
+    z-index: 1001 !important;
+}
+.subunlist1 li img {
+    width: 30px;
+    margin-right: 8px;
+}
+.subunlist2 {
+    width: 222px;
+    height: auto;
+    position: absolute;
+    background-color: #d0ddd0;
+    top: 10px;
+    display: none;
+    left: 250px;
+    z-index: 1002 !important;
+}
+
+.subunlist2 li {
+    width: 100%;
+    height: 3rem !important;
+    text-align: left;
+    line-height: 2rem;
+    border-bottom: 2px solid #e6d7d7;
+}
+
+.subunlist1 li {
+    width: 100%;
+    height: 3rem !important;
+    text-align: left;
+    line-height: 1rem;
+    border-bottom: 2px solid #bdc3bd;
+}
+
+/*----------------------------------hover list------------------------------------*/
+.subunlist2 li:hover,.subunlist1 li:hover{
+    background-color: rgba(255, 69, 0,.4);
+}
+.irctc_exclusive:hover > .irctc_exclusive_subunlist1 {
+    display: block;
+}
+
+.irctc_ewallet:hover > .ewallet_subunlist2 {
+    display: block;
+}
+
+.trains:hover > .trainssubunlist1 {
+    display: block;
+}
+
+.irctc_trains_li:hover > .irctc_trains_subunlist2 {
+    display: block;
+}
+
+.cancel_ticket_li:hover > .cancel_ticket_subunlist2 {
+    display: block;
+}
+
+.holidays:hover > .holidays_subunlist1 {
+    display: block;
+}
+
+.special_train_li:hover > .special_train_subunlist2 {
+    display: block;
+}
+
+.packages_li:hover > .packages_subunlist2 {
+    display: block;
+}
+
+.stays_li:hover > .stays_subunlist2 {
+    display: block;
+}
+
+.loyalty_li:hover > .loyalty_subunlist1 {
+    display: block;
+}
+
+.meals_li:hover > .meals_subunlist1 {
+    display: block;
+}
+
+.promotions_li:hover > .promotions_subunlist1 {
+    display: block;
+}
+
+.irctc_rail_connect_app_li:hover > .irctc_rail_connect_app_subunlist2 {
+    display: block;
+}
+
+.irctc_sbi_credit-card_li:hover > .irctc_sbi_credit-card_subunlist2 {
+    display: block;
+}
+
+
+
+/*------------------------------------------------------hover end ------------------------------------*/
+
+/*------------------------------------------------------login form start ------------------------------------*/
+
+.formdiv {
+    margin-top: 80px;
+    z-index: 999 !important;
+}
+
+.formsection {
+    background-color: rgba(244, 235, 235,.7);
+    padding: 20px;
+   
+}
+
+
+input,
+select {
+    border: 0;
+    width: 60%;
+    outline: none;
+}
+input[type="checkbox"]{
+    display: inline-block;
+}
+.rotate90 {
+    width: 260px;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-exchange {
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+
+/*--------------------------------------------------------------------- 2 part of main page-----------------------------------------------------------*/
+
+
+
+.circle{
+    text-align: center;
+}
+.second_page_heading{
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+
+.second_page_icon{
+    width: 120px;
+    height: 120px;
+    
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 120px;
+   
+    margin: 20px auto;
+}
+.second_page_icon .fas{
+    font-size: 50px;
+}
+.second_page_icon:hover{
+    background-color: blue;
+    color: #fff;
+}
+
+
+/**--------------------------------------------------------------------- 3 part of main page-----------------------------------------------------------*/*/
+
+.container .card .card-header img{
+    width: 10px;
+    display: block;
+    height: auto;
+}
+
+/*-------------------------------------------------------------footer style--------------------------------*/
+
+.footer_first_div{
+    height: 60px;
+    background-color: #1581e0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 20px;
+}
+.footer_first_div p{
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 0!important;
+}
+.social{
+    width: 595px;
+    height: 60px;
+   line-height: 60px;
+/*
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+*/
+}
+.footer_first_div .social i{
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    margin: 0 5px;
+    border-radius: 100%;
+    
+}
+.footer_first_div .social i:nth-child(1){
+    background-color: blue;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(2){
+     background-color: #fff;
+    color: #de1919;
+}
+.footer_first_div .social i:nth-child(3){
+     background-color: blueviolet;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(4){
+     background-color: slateblue;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(5){
+     background-color: skyblue;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(6){
+     background-color: darkred;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(8){
+     background-color: #2c2a2a;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(7){
+     background-color: yellow;
+    color: #fff;
+}
+.footer_first_div .social i:nth-child(9){
+     background-color: skyblue;
+    color: #fff;
+}
+.footer_first_div .social i{
+    cursor: pointer;
+}
+
+.footer_second_div{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    background-color: #127ad6;
+}
+
+.footer_second_div ul li{
+    width: auto;
+    height: auto;
+    text-align: left;
+    list-style: none;
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+    
+    
+}
+.IRCTC_trains_footer_li_ul,.general_Information_footer_li_ul,.Important_Information_footer_li_ul,.agents_footer_li_ul{
+    width: 300px;
+    height: auto;
+    display: none;
+  
+}
+
+
+/*--------------------------document font size increament decreament btn ---------------------------------------------------*/
+
+
+
+.A,.A-,.A_plus{
+    margin-right: 10px;
+    border: 0;
+    outline: 0!important;
+    background-color: transparent;
+}

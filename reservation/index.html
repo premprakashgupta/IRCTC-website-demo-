@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>IRCTC-plateform | ticket counter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.14.0-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="image/facebook.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="preloadingfun(),tick()">
+    <div class="container preloader" id="preloader">
+        <div class="center-container">
+            <img src="image/Preloader.gif" alt="">
+        </div>
+    </div>
+    <div class="container">
+
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Alert</h4>
+
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p>Hon'ble Prime Minister message on "Public Health Response to COVID-19: Campaign for COVID-Appropriate Behaviour". Wear Mask, Follow Physical Distancing, Maintain Hand Hygine.</p>
+                        <p>Get your favourite food at your train seat through e-Catering available at selected stations.</p>
+                        <small>COVID 19 Alert:</small>
+                        <ul>
+                            <li><a href="#">Information on Covid 19 Vaccination Programme</a></li>
+                            <li><a href="#">Covid-19 Guidelines For Kumbh Mela 2021 at Haridwar.</a></li>
+                            <li>All passengers are hereby informed that downloading of Aarogya Setu App on their mobile phone, that they are carrying along, is advisable.</li>
+                            <li>All Passenger to kindly note that on arrival at their destination, the traveling passengers will have to adhere to such health protocols as are prescribed by the destination State/UT. Click Here to see state wise advisory on Arrival(As available). For other states, State Govt websites may be visited to ascertain the same.</li>
+                            <li>For trains cancelled till 30th June 2020 by Indian Railways, full refund will be provided automatically by IRCTC. Users need not cancel their e-tickets. Full fare will be credited back into users accounts from which payment was made.</li>
+                            <li>Catering Service is not available and catering charges not included in the fare.
+                            </li>
+                            <li>No blanket and linen shall be provided in the train.</li>
+                            <li>There are Maximum Waiting List Limits in the PRS booking system for which Waitlisted Tickets can be issued after all confirmed tickets are exhausted. Your ticket booking request may get declined as the Maximum Waiting List Limit may be reached in the booking system by the time payment success response is received from your bank. In such case, your deducted amount will be refunded back, without any deductions, to your bank account in 3-5 working days. Inconvenience caused is regretted.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  main page from here------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <div class="container-fluid backgroundimage_for_interface">
+        <header>
+            <div class="logo1"><img src="image/logo1.png" alt="indian railway logo"></div>
+            <navbar>
+                <nav id="nav">
+                   <span class="close" onclick="menuclose()"><i class="fas fa-times" id="close"></i></span>
+                    <ul class="unlist1">
+                        <li class="login_li"><a href="#">Log in</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Agent Login</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Ask Disha</a></li>
+                        <li class="alert_li"><a href="#"><strong> Alerts</strong></a></li>
+                        
+                        <li><strong id="date"></strong> <strong id="time"></strong></li>
+                        <li><button class="A-"><b>A-</b></button><button class="A"><b>A</b></button><button class="A_plus"><b>A+</b></button></li>
+                        <li><a href="#"> <strong> Language</strong></a></li>
+                    </ul>
+
+                    <ul class="unlist2">
+                        <li><a href="#"><i class="fas fa-home"></i></a></li>
+                        <li class="irctc_exclusive"><a href="#">IRCTC Exclusive</a>
+                            <ul class="subunlist1 irctc_exclusive_subunlist1">
+                                <li class="irctc_ewallet"> <img src="image/logo2.png" alt="">IRCTC eWallet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 ewallet_subunlist2">
+                                        <li>About IRCTC eWallet</li>
+                                        <li>IRCTC ewallet user guid</li>
+                                    </ul>
+                                </li>
+                                <li><img src="image/IRCTC-Mudra.png" alt=""> IRCTC eMudra</li>
+                                <li> <img src="image/zee5Icon.png" alt="">Zee5 Subscription</li>
+                                <li> <img src="image/logo2.png" alt="">Deals on IRCTC</li>
+                            </ul>
+
+                        </li>
+                        <li class="trains"><a href="#">Trains</a>
+                            <ul class="subunlist1 trainssubunlist1">
+                                <li>Book Ticket</li>
+                                <li>Foreign Tourist booking</li>
+                                <li>Connecting Journey Booking</li>
+                                <li class="irctc_trains_li">IRCTC Trains &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 irctc_trains_subunlist2">
+                                        <li>Group Booking</li>
+                                        <li>Travel Insurance Claim Process</li>
+                                    </ul>
+                                </li>
+                                <li class="cancel_ticket_li">Cancel ticket &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 cancel_ticket_subunlist2">
+                                        <li>E-Tickets</li>
+                                        <li>Counter Tickets</li>
+                                    </ul>
+                                </li>
+                                <li>PNR Enquiry</li>
+                                <li>Train schedule</li>
+                                <li>Track your tarin</li>
+                                <li>FTR Coach/Train Booking</li>
+                            </ul>
+
+
+                        </li>
+                        <li><a href="#">buses</a></li>
+                        <li><a href="#">Flight</a></li>
+                        <li class="holidays"><a href="#">Holidays</a>
+                            <ul class="subunlist1 holidays_subunlist1">
+                                <li class="special_train_li">Special Trains &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 special_train_subunlist2">
+                                        <li>Tourist Train</li>
+                                        <li>Maharaja's Train</li>
+                                    </ul>
+                                </li>
+                                <li class="packages_li">Packages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 packages_subunlist2">
+                                        <li>Tour packages</li>
+                                        <li>Air Packages</li>
+                                        <li>International Packages </li>
+                                        <li>Land Packages</li>
+                                    </ul>
+                                </li>
+                                <li class="stays_li">Stays &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 stays_subunlist2">
+                                        <li>IRCTC Hotels</li>
+                                        <li>Retiring room</li>
+                                        <li>Longue</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="loyalty_li"><a href="#">Loyalty</a>
+                            <ul class="subunlist1 loyalty_subunlist1">
+                                <li>About IRCTC SBI credit card</li>
+                                <li>IRCTC platinum card RUPAY e-Apply</li>
+                            </ul>
+                        </li>
+                        <li class="meals_li"><a href="#">meals</a>
+                            <ul class="subunlist1 meals_subunlist1">
+                                <li>Order food</li>
+                                <li>Standard menu rates</li>
+                            </ul>
+                        </li>
+                        <li class="promotions_li"><a href="#">promotions</a>
+                            <ul class="subunlist1 promotions_subunlist1">
+                                <li>Advertised with IRCTC</li>
+                                <li class="irctc_rail_connect_app_li">IRCTC rail connect App &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+                                    <ul class="subunlist2 irctc_rail_connect_app_subunlist2">
+                                        <li>Android Mobile App</li>
+                                        <li>iOS Mobile App</li>
+                                    </ul>
+
+                                </li>
+                                <li>IRCTC air App</li>
+                                <li>UTS TICKET APP</li>
+                                <li class="irctc_sbi_credit-card_li">IRCTC SBI Credit-card &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-caret-right"></i>
+
+                                    <ul class="subunlist2 irctc_sbi_credit-card_subunlist2">
+                                        <li>About IRCTC SBI credit card</li>
+                                        <li>IRCTC platinum card RUPAY e-Apply</li>
+                                    </ul>
+
+                                </li>
+
+                                <li>National Voter's Service Portal</li>
+                                <li>Mahila E-Haat</li>
+                                <li>Rail Drishti</li>
+                                <li>Deals on IRCTC</li>
+                                <li>Indian Railways Magazines</li>
+                                <li>Railways Foreight Business Portal</li>
+
+                            </ul>
+
+                        </li>
+                        <li class="premium_partner_li"><a href="#">premium partner</a></li>
+                        <li><a href="#"></a>more</li>
+                    </ul>
+                </nav>
+            </navbar>
+            <span class="menu_bar" onclick="menuopen()"><i class="fas fa-bars" id="menu_bar"></i></span>
+            
+            <div class="logo2"><img src="image/logo2.png" alt="irctc logo"></div>
+            
+        </header>
+
+
+
+
+        <!--  --------------------------------------------------------navbar end----------------------------------  -->
+
+
+
+        <div class="container-fluid formdiv font-size">
+
+            <div class="row">
+                <div class="col col-lg-6 col-md-6 col-sm-12">
+                    <div class="login_container">
+                        <div class="row pnrchart_row">
+                            <div class="col pnr">
+                                <h3><a href="#">PNR</a></h3>
+                            </div>
+                            <div class="col chart">
+                                <h3><a href="#">Chart</a></h3>
+                            </div>
+                        </div>
+                        <div class="row formsection ">
+                            <div class="col col-lg-12 col-md-12 col-sm-12 form-group">
+                                <form action="#" class="form-group">
+                                    <div class="row">
+                                        <div class="col col-lg-6 col-md-6 col-sm-6 form-group">
+                                            <label class="form-control form-group" for="fromlocation"><i class="fa fa-location-arrow"></i>
+                                                <input type="text" placeholder="From" id="fromlocation"></label>
+                                            <span class="rotate90"><i class="fa fa-exchange" id="exchangelocation" onclick="exchangelocation()"></i></span>
+                                            <label class="form-control" for="tolocation"><i class="fa fa-map-marker"></i>
+                                                <input type="text" placeholder="To" id="tolocation"></label>
+                                        </div>
+                                        <div class="col col-lg-6 col-md-6 col-sm-6 form-group">
+
+                                            <input type="date" class="form-control form-group">
+                                            <label class="form-control" for="class_selection"><i class="fa fa-briefcase"></i>
+                                                <select name="" id="class_selection">
+                                                    <option value="">All classes</option>
+                                                    <option value="">Second classes</option>
+                                                    <option value="">sleeper</option>
+                                                    <option value="">AC Chair car (CC)</option>
+                                                    <option value="">AC 3 Economy (3E)</option>
+                                                    <option value="">AC 3 Tier (3A)</option>
+                                                    <option value="">First Class (FC)</option>
+                                                    <option value="">AC 2 Tier (2A)</option>
+                                                    <option value="">Exec. Chair car (EC)</option>
+                                                    <option value="">AC First Class (1A)</option>
+                                                </select></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-lg-12 col-md-12 col-sm12 form-group">
+                                            <label class="form-control" id="passanger_catogery" for="passanger_catogery_selection"><i class="fa fa-th-large"></i>
+                                                <select name="" id="passanger_catogery_selection">
+                                                    <option value="">General</option>
+                                                    <option value="">Ladies</option>
+                                                    <option value="">Lower Birth Citizen</option>
+                                                    <option value="">Divyang</option>
+                                                    <option value="">Tatkal</option>
+                                                    <option value="">Primium Tatkal</option>
+                                                </select></label>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-lg-12 col-md-12 col-sm12 form-group"><input type="checkbox" id="Divyang consession">
+                                            <label for="Divyang consession">Divyang consession</label>
+                                            <input type="checkbox" id="Flexible with date">
+                                            <label for="Flexible with date">Flexible with date</label>
+                                            <input type="checkbox" id="Train with availabe birth">
+                                            <label for="Train with availabe birth">Train with availabe birth</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <input type="submit" value="Search" class="btn">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row formsection my-2">
+                            <div class="col col-lg-12 col-md-12 col-sm-12">
+                                <p>IRCTC Tejas Express trains 82501/82502 and 82901/82902 are now available for online booking for journey from 14.02.2021 onwards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 headingcol text-white">
+                    <div class="heading">
+                        <h1>Indian railway</h1>
+                        <p class="text-center">safety | security | punchuality</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+<div class="container font-size">
+    <div class="second_page_heading">
+        <h1>Have you not found the right one? <br>
+Find a service suitable for you here.</h1>
+    </div>
+    <div class="row">
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-plane"></i></span><h3>Flights</h3></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-hotel"></i></span><h3>Hotels</h3></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-chart-line"></i></span><h3>Rail Drishti</h3></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-utensils"></i></span><h3>E-Catering</h3></div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-bus"></i></span><h3>Bus</h3></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-umbrella-beach"></i></span><h3>Holidays Packages</h3></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-train"></i></span><h3>Tourist Train</h3></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-mountain"></i></span><h3>Hills Railways</h3></div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-3 col-md-3 col-sm-6 circle"><span class="second_page_icon"><i class="fas fa-subway"></i></span><h3>CHARTER TRAIN</h3></div>
+        
+    </div>
+</div>
+<div class="container font-size" style="margin-top: 70px;">
+    <div class="row">
+        <div class="col col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+  <div class="card-header"><img src="image/exterior.jpg" alt=""></div>
+  <div class="card-body"><h3>Maharaja"s Express</h3></div>
+  <div class="card-footer"><p>Redefining Royalty, Luxury and Comfort, Maharaja’s express takes you on a sojourn to the era of bygone stately splendour of princely states. Sylvan furnishings, elegant ambience and modern amenities are amalgamated for an “Experience Unsurpassed”. It has been a winner of “World’s Leading Luxury train” by World Travel Awards consecutively for last six years.&nbsp;&nbsp;&nbsp;<br><br><a href="#">Read more <i class="fas fa-arrow-right"></i></a></p></div>
+</div>
+        </div>
+         <div class="col col-lg-4 col-md-6 col-sm-12">
+             <div class="card">
+  <div class="card-header"><img src="image/Thailand.jpg" alt=""></div>
+  <div class="card-body"><h3>International Packages</h3></div>
+  <div class="card-footer"><p>Best deals in International Holiday packages, handpicked by IRCTC, for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA, Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas medical insurance to give you a hassle-free and memorable experience.&nbsp;&nbsp;&nbsp;<br><br><a href="#">Read more <i class="fas fa-arrow-right"></i></a></p></div>
+</div>
+         </div>
+          <div class="col col-lg-4 col-md-6 col-sm-12">
+              <div class="card">
+  <div class="card-header"><img src="image/Kashmir.jpg" alt=""></div>
+  <div class="card-body"><h3>Domestic Air Package</h3></div>
+  <div class="card-footer"><p>Be it the spiritual devotee seeking blessings of Tirupati, Shirdi or Mata Vaishno Devi or the leisure traveller wanting to relish the Blue mountains of North East, Sand-dunes of Rajasthan, Hamlets of Ladakh, Wonders of Himalayas, Serene lakes or Picturesque Islands, IRCTC has it all. Discover India through IRCTC!&nbsp;&nbsp;&nbsp;<br><br><a href="#">Read more <i class="fas fa-arrow-right"></i></a> </p></div>
+</div>
+          </div>
+    </div>
+</div>
+
+<footer class="font-size">
+    <div class="footer_first_div container-fluid ">
+        <div class="row">
+            <div class="col col-lg-6 col-md-6 col-sm-12"><p>Get Connected with us on social networks</p></div>
+            <div class="col col-lg-6 col-md-6 col-sm-12">
+                <div class="social">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-telegram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-yahoo"></i>
+                    <i class="fab fa-tumblr"></i>
+                     <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_second_div container-fluid">
+        <div class="row">
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <ul>
+                    <li class="IRCTC_trains_footer_li">IRCTC Trains &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                            <ul class="IRCTC_trains_footer_li_ul">
+                                <li><a href="#">Salient Feature</a></li>
+                                <li><a href="#">Ticket Cancellation Rules</a></li>
+                                <li><a href="#">Foreign Tourist T&amp;C</a></li>
+                                <li><a href="#">Group Booking T&amp;C</a></li>
+                                <li><a href="#">Travel Insurance Claim</a></li>
+                                <li><a href="#">Process</a></li>
+                            </ul>
+                     
+                      
+                        </li>
+                    <li class="general_Information_footer_li">General Information&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                    
+                    <ul class="general_Information_footer_li_ul">
+                                <li><a href="#">More Info</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Term and Condition</a></li>
+                                <li><a href="#">Travel Insurance  T&amp;C</a></li>
+                                <li><a href="#">FTR T&amp;C</a></li>
+                                <li><a href="#">New Facilities In E-Tickets</a></li>
+                                <li><a href="#">Scheme for issue of waitlisted E-tickets</a></li>
+                                <li><a href="#">Protect against fraudulent emails</a></li>
+                                <li><a href="#">General Guidlines for SUVIDHA trains</a></li>
+                                <li><a href="#">Current Booking Guidlines</a></li>
+                                <li><a href="#">Forgo Senior Citizen Concession-FAQ</a></li>
+                                <li><a href="#">Train at a Glance</a></li>
+                                <li><a href="#">Guidelines for Boarding Station change</a></li>
+                                <li><a href="#">Salient Feature of PASS Booking</a></li>
+                            </ul>
+                    
+                    </li>
+                    <li class="Important_Information_footer_li">Important Information&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                   <ul class="Important_Information_footer_li_ul">
+                       <li><a href="#"> Bank Transaction Charges</a></li>
+                       <li><a href="#"> Service Tax Rules</a></li>
+                       <li><a href="#"> Women Sr. Citizen Concession</a></li>
+                       <li><a href="#"> VIKALP Scheme</a></li>
+                       <li><a href="#"> Travel Insurance (Incl. of GST)</a></li>
+                       <li><a href="#"> Menu Rates</a></li>
+                       <li><a href="#"> Rajdhani Menu</a></li>
+                       <li><a href="#"> Browser Settings</a></li>
+                    
+                    </ul>
+                    
+                    </li>
+                    <li class="agents_footer_li">Agents&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                    <ul class="agents_footer_li_ul">
+                        <li><a href="#">IRCTC Authorized Service Providers</a></li>
+                        <li><a href="#">Digital Certificate Generation Process</a></li>
+                        <li><a href="#">Blacklist Agent</a></li>
+                        <li><a href="#">Find NgeT Agents</a></li>
+                        <li><a href="#">Rules and Regulations for the Agents</a></li>
+                        <li><a href="#"> Norms for RTSA</a></li>
+                        <li><a href="#"> Norms for IATA</a></li>
+                        <li><a href="#">Norms for GSA</a></li>
+                        <li><a href="#">Norms for Internet Cafe Scheme</a></li>
+                        <li><a href="#">Norms for B2B Scheme</a></li>
+                        <li><a href="#">Norms for B2C & Mobile Scheme</a></li>
+                        <li><a href="#">Registration Form</a></li>
+                        <li><a href="#"> Requisition Slip</a></li>
+                        <li><a href="#"> Policy for UTPP for UTS System</a></li>
+                    
+                    </ul>
+                    </li>
+                    <li>Enquiries&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                </ul>
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <ul>
+                    <li>How To&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>IRCTC official App&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>Advertise with us &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>Refund Rule &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>Divyangjan Facilities &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                </ul>
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <ul>
+                    <li>IRCTC eWallet &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>IRCTC Loyalty Program &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>About us &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>IRCTC Zone &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>MP/Ex-MP Ticket Booking &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                </ul>
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <ul>
+                    <li>For Newly Migrated Agents &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>Mobile Zone &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    <li>Integration Policy &nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+</body>
+<script src="java/indexjava.js"></script>
+
+</html>
